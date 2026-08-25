@@ -13,16 +13,17 @@
     <div class="container accessibility-controls">
       <button id="btn-increase" aria-label="Aumentar tamanho do texto">A+</button>
       <button id="btn-decrease" aria-label="Diminuir tamanho do texto">A-</button>
+      <button id="btn-contrast" aria-label="Alternar Alto Contraste">◐ Alto Contraste</button>
       <button id="btn-read" aria-label="Ouvir texto em voz alta">🔊 Ouvir Página</button>
       <button id="btn-stop" aria-label="Parar leitura em voz alta" style="display: none;">⏹ Parar</button>
     </div>
   </header>
 
-  <!-- Cabeçalho / Banner Principal -->
+  <!-- Cabeçalho Principal -->
   <header class="main-header">
     <div class="container">
       <h1>Feira da Presbiopia</h1>
-      <p class="subtitle">Entendendo a "vista cansada" e cuidando da sua visão</p>
+      <p class="subtitle">Entendendo a "vista cansada", prevenindo impactos e cuidando da sua visão</p>
     </div>
   </header>
 
@@ -30,31 +31,81 @@
 
     <!-- Seção: Temática do Projeto -->
     <section class="card thematic-section" aria-labelledby="theme-title">
-      <h2 id="theme-title">Temática do Estande / Projeto</h2>
+      <h2 id="theme-title">📌 Temática do Nosso Estande</h2>
       <p>
         <!-- INSIRA AQUI A TEMÁTICA DA SUA FEIRA -->
-        [Espaço para a temática: Explique aqui a proposta da feira, o objetivo do estande, o público-alvo e a importância de falar sobre a presbiopia de forma acessível.]
+        [Espaço para a temática: Explique a proposta do estande da feira, o objetivo acadêmico/comunitário, o público-alvo e como o projeto busca democratizar a informação sobre a saúde dos olhos.]
       </p>
     </section>
 
-    <!-- Seção: Sobre a Presbiopia -->
+    <!-- Seção: O que é Presbiopia -->
     <section class="card" aria-labelledby="about-title">
-      <h2 id="about-title">O que é Presbiopia?</h2>
+      <h2 id="about-title">👁️ O que é Presbiopia?</h2>
       <p>
-        A presbiopia, conhecida popularmente como "vista cansada", é uma condição natural relacionada ao envelhecimento dos olhos. Ocorre quando o cristalino (a lente natural do olho) perde a flexibilidade, dificultando o foco em objetos próximos.
+        A presbiopia, popularmente conhecida como "vista cansada", é um processo natural de envelhecimento dos olhos. O cristalino perde a flexibilidade com o passar dos anos, tornando difícil focar objetos ou textos próximos.
       </p>
     </section>
 
-    <!-- Seção: Espaço para Vídeo -->
+    <!-- Seção: Simulador de Visão (Interativo) -->
+    <section class="card" aria-labelledby="simulator-title">
+      <h2 id="simulator-title">🔍 Simulador: Como enxerga quem tem Presbiopia?</h2>
+      <p>Arraste o controle abaixo para ver como uma pessoa com presbiopia enxerga ao tentar ler de perto:</p>
+      
+      <div class="simulator-box">
+        <p id="simulated-text" class="blur-level-3">
+          "A leitura de letras pequenas em livros, embalagens e telas de celular torna-se embaçada sem o uso de lentes corretivas."
+        </p>
+      </div>
+      
+      <div class="simulator-controls">
+        <label for="blur-range">Simular grau de nitidez:</label>
+        <input type="range" id="blur-range" min="0" max="8" value="4" aria-label="Ajustar embaçamento do texto">
+      </div>
+    </section>
+
+    <!-- Seção: Sintomas vs Soluções (Tabela) -->
+    <section class="card" aria-labelledby="table-title">
+      <h2 id="table-title">📊 Sintomas e Formas de Tratamento</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Sintomas Comuns</th>
+              <th>Opções de Correção</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dificuldade para ler letras pequenas</td>
+              <td>Óculos de leitura (visão simples)</td>
+            </tr>
+            <tr>
+              <td>Afastar os objetos para conseguir focar</td>
+              <td>Lentes multifocais / progressivas</td>
+            </tr>
+            <tr>
+              <td>Cansaço visual ou dor de cabeça após leitura</td>
+              <td>Lentes de contato multifocais</td>
+            </tr>
+            <tr>
+              <td>Necessidade de luz mais forte para enxergar de perto</td>
+              <td>Cirurgia refrativa (avaliação médica)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Seção: Vídeo Explicativo -->
     <section class="card video-section" aria-labelledby="video-title">
-      <h2 id="video-title">Vídeo Explicativo</h2>
-      <p>Assista ao vídeo abaixo para entender melhor como a presbiopia afeta a visão:</p>
+      <h2 id="video-title">🎥 Vídeo Explicativo</h2>
+      <p>Assista ao vídeo informativo preparado para o evento:</p>
       
       <div class="video-container">
-        <!-- Espaço para o vídeo (Substitua o 'src' pelo link do seu vídeo no YouTube ou MP4) -->
+        <!-- Substitua o 'src' pelo link do seu vídeo -->
         <iframe 
           src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" 
-          title="Vídeo sobre Presbiopia" 
+          title="Vídeo explicativo sobre Presbiopia" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
@@ -62,10 +113,30 @@
       </div>
     </section>
 
-    <!-- Seção: Links Externos / Materiais de Apoio -->
+    <!-- Seção: Perguntas Frequentes (FAQ) -->
+    <section class="card" aria-labelledby="faq-title">
+      <h2 id="faq-title">❓ Perguntas Frequentes (FAQ)</h2>
+      
+      <details>
+        <summary>A presbiopia tem cura?</summary>
+        <p>Não há "cura" porque é um processo natural de envelhecimento do olho, mas pode ser perfeitamente corrigida com óculos, lentes de contato ou procedimentos cirúrgicos.</p>
+      </details>
+
+      <details>
+        <summary>Com qual idade a presbiopia costuma aparecer?</summary>
+        <p>Geralmente começa a se manifestar a partir dos 40 a 45 anos de idade.</p>
+      </details>
+
+      <details>
+        <summary>Usar óculos faz o grau aumentar mais rápido?</summary>
+        <p>Mito. Os óculos apenas corrigem a refração necessária para dar conforto visual; eles não aceleram e nem desaceleram a evolução natural da presbiopia.</p>
+      </details>
+    </section>
+
+    <!-- Seção: Links Externos -->
     <section class="card links-section" aria-labelledby="links-title">
-      <h2 id="links-title">Links Externos e Fontes</h2>
-      <p>Acesse mais informações e materiais complementares sobre saúde ocular:</p>
+      <h2 id="links-title">🔗 Links Externos e Fontes Oficiais</h2>
+      <p>Consulte portais de saúde confiáveis para saber mais:</p>
       
       <ul class="external-links">
         <li>
@@ -74,12 +145,33 @@
           </a>
         </li>
         <li>
+          <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer">
+            Ministério da Saúde - Saúde Ocular ↗
+          </a>
+        </li>
+        <li>
           <!-- INSIRA AQUI OUTRO LINK EXTERNO SEU -->
           <a href="https://exemplo.com" target="_blank" rel="noopener noreferrer">
-            [Espaço para seu Link Externo / Artigo / Cartilha] ↗
+            [Espaço para seu Link Externo / Material da Feira] ↗
           </a>
         </li>
       </ul>
+    </section>
+
+    <!-- Seção: Contato / Dúvidas -->
+    <section class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">✉️ Ficou com dúvidas sobre o nosso estande?</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" required placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem ou Pergunta:</label>
+          <textarea id="message" rows="4" required placeholder="Escreva sua mensagem..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+      </form>
     </section>
 
   </main>
@@ -88,7 +180,7 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 Feira de Saúde - Projeto Presbiopia</p>
-      <p>Endereço do projeto: <code>site-feira-pesbiopia.vercel.app</code></p>
+      <p>Acesse nosso site: <code>site-feira-pesbiopia.vercel.app</code></p>
     </div>
   </footer>
 

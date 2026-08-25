@@ -5,36 +5,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnDecrease = document.getElementById('btn-decrease');
 
   btnIncrease.addEventListener('click', () => {
-    if (currentZoom < 150) { // Limite máximo de 150%
+    if (currentZoom < 150) {
       currentZoom += 10;
       document.body.style.fontSize = `${currentZoom}%`;
     }
   });
 
   btnDecrease.addEventListener('click', () => {
-    if (currentZoom > 80) { // Limite mínimo de 80%
+    if (currentZoom > 80) {
       currentZoom -= 10;
       document.body.style.fontSize = `${currentZoom}%`;
     }
   });
 
+  // --- RECURSO: ALTO CONTRASTE ---
+  const btnContrast = document.getElementById('btn-contrast');
+  btnContrast.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+  });
+
+  // --- RECURSO: SIMULADOR DE VISÃO (DESFOQUE) ---
+  const blurRange = document.getElementById('blur-range');
+  const simulatedText = document.getElementById('simulated-text');
+
+  if (blurRange && simulatedText) {
+    blurRange.addEventListener('input', (e) => {
+      const blurValue = e.target.value;
+      simulatedText.style.filter = `blur(${blurValue}px)`;
+    });
+  }
+
   // --- RECURSO: LEITURA EM VOZ ALTA (Web Speech API) ---
   const btnRead = document.getElementById('btn-read');
   const btnStop = document.getElementById('btn-stop');
   let synth = window.speechSynthesis;
-  let utterance = null;
 
   if ('speechSynthesis' in window) {
     btnRead.addEventListener('click', () => {
-      // Cancela leituras anteriores em andamento
       synth.cancel();
 
-      // Pega todo o texto principal da página
       const mainText = document.querySelector('main').innerText;
-
-      utterance = new SpeechSynthesisUtterance(mainText);
+      const utterance = new SpeechSynthesisUtterance(mainText);
       utterance.lang = 'pt-BR';
-      utterance.rate = 1.0; // Velocidade da voz
+      utterance.rate = 1.0;
 
       utterance.onend = () => {
         btnRead.style.display = 'inline-block';
@@ -42,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       synth.speak(utterance);
-
       btnRead.style.display = 'none';
       btnStop.style.display = 'inline-block';
     });
@@ -53,7 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
       btnStop.style.display = 'none';
     });
   } else {
-    // Se o navegador não suportar síntese de voz
     btnRead.style.display = 'none';
+  }
+
+  // --- SIMULAÇÃO DE ENVIO DO FORMULÁRIO ---
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Obrigado! Sua mensagem foi recebida.');
+      contactForm.reset();
+    });
   }
 });
