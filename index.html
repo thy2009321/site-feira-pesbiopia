@@ -3,167 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feira de Saúde - Presbiopia</title>
+  <title>Feira da Presbiopia - Guia Completo de Saúde Ocular</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Barra de Acessibilidade -->
-  <header class="accessibility-bar" aria-label="Barra de Acessibilidade">
+  <!-- Barra de Acessibilidade Fixa -->
+  <header class="accessibility-bar" aria-label="Ferramentas de Acessibilidade">
     <div class="container accessibility-controls">
-      <button id="btn-increase" aria-label="Aumentar tamanho do texto">A+</button>
-      <button id="btn-decrease" aria-label="Diminuir tamanho do texto">A-</button>
+      <button id="btn-increase" aria-label="Aumentar tamanho da fonte">A+</button>
+      <button id="btn-decrease" aria-label="Diminuir tamanho da fonte">A-</button>
       <button id="btn-contrast" aria-label="Alternar Alto Contraste">◐ Alto Contraste</button>
-      <button id="btn-read" aria-label="Ouvir texto em voz alta">🔊 Ouvir Página</button>
+      <button id="btn-read" aria-label="Ouvir conteúdo em voz alta">🔊 Ouvir Página</button>
       <button id="btn-stop" aria-label="Parar leitura em voz alta" style="display: none;">⏹ Parar</button>
     </div>
   </header>
 
-  <!-- Cabeçalho Principal -->
+  <!-- Banner Principal -->
   <header class="main-header">
     <div class="container">
+      <span class="badge">Projeto Acadêmico & Comunitário</span>
       <h1>Feira da Presbiopia</h1>
-      <p class="subtitle">Saúde ocular, prevenção e qualidade de vida na maturidade</p>
+      <p class="subtitle">Compreendendo a "vista cansada", prevenindo complicações e cuidando da sua saúde visual na maturidade.</p>
     </div>
   </header>
 
+  <!-- Navegação Interna Rápidas (Âncoras) -->
+  <nav class="nav-menu" aria-label="Navegação rápida pelo conteúdo">
+    <div class="container nav-links">
+      <a href="#tematica">Temática</a>
+      <a href="#sobre">O que é?</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#video">Vídeo</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#links">Fontes</a>
+    </div>
+  </nav>
+
   <main class="container">
 
-    <!-- Seção: Temática do Projeto -->
-    <section class="card thematic-section" aria-labelledby="theme-title">
+    <!-- Seção 1: Temática do Projeto -->
+    <section id="tematica" class="card thematic-section" aria-labelledby="theme-title">
       <h2 id="theme-title">📌 Temática do Nosso Estande</h2>
       <p>
-        [Espaço para a temática: Apresentação do projeto acadêmico e comunitário com foco em promover a conscientização sobre a presbiopia, garantindo acesso à informação clara e inclusiva para todas as idades.]
+        Este site foi desenvolvido para a <strong>Feira de Saúde Ocular</strong>, abordando de forma didática e inclusiva a <strong>presbiopia</strong>. O objetivo do nosso estande é conscientizar a comunidade sobre as mudanças naturais na visão que ocorrem com o envelhecimento, desmistificar tratamentos, alertar sobre riscos de lentes não prescritas e promover a inclusão por meio de recursos de acessibilidade digital.
       </p>
     </section>
 
-    <!-- Seção: O que é Presbiopia -->
-    <section class="card" aria-labelledby="about-title">
-      <h2 id="about-title">👁️ O que é Presbiopia?</h2>
+    <!-- Seção 2: O que é Presbiopia -->
+    <section id="sobre" class="card" aria-labelledby="about-title">
+      <h2 id="about-title">👁️ O que é a Presbiopia?</h2>
       <p>
-        A presbiopia, popularmente conhecida como "vista cansada", é um processo natural de envelhecimento dos olhos. O cristalino (a lente natural do olho) perde a flexibilidade com o passar dos anos, tornando difícil focar objetos ou textos que estão próximos.
+        A presbiopia, popularmente conhecida como <em>"vista cansada"</em>, é uma condição fisiológica natural relacionada ao envelhecimento dos olhos. Ocorre quando o <strong>cristalino</strong> (a lente natural interna do olho) perde gradualmente sua flexibilidade e elasticidade.
+      </p>
+      <p>
+        Com o passar dos anos, os músculos ciliares que ajustam o foco do cristalino também perdem a capacidade de adaptação rápida, tornando difícil focar objetos, livros, embalagens e telas localizados a curta distância.
       </p>
     </section>
 
-    <!-- Seção: Sinais de Alerta no Dia a Dia -->
+    <!-- Seção 3: Sinais e Sintomas -->
     <section class="card" aria-labelledby="signals-title">
-      <h2 id="signals-title">🚨 Como identificar os primeiros sinais?</h2>
-      <ul>
-        <li>Necessidade de "esticar os braços" para conseguir ler um livro ou celular.</li>
-        <li>Visão embaçada em ambientes com pouca iluminação.</li>
-        <li>Dores de cabeça ou sensação de peso ao redor dos olhos após tarefas de perto.</li>
-        <li>Cansaço visual frequente ao trabalhar no computador ou realizar costura/leitura.</li>
+      <h2 id="signals-title">🚨 Principais Sinais e Sintomas</h2>
+      <ul class="styled-list">
+        <li><strong>Síndrome do Braço Curto:</strong> Necessidade de afastar textos, celulares ou objetos para conseguir ler.</li>
+        <li><strong>Visão Embaçada de Perto:</strong> Dificuldade para enxergar detalhes finos, letras pequenas ou fazer trabalhos manuais.</li>
+        <li><strong>Fadiga Ocular (Astenopia):</strong> Sensação de peso, ardência ou cansaço nos olhos após leitura prolongada.</li>
+        <li><strong>Dores de Cabeça:</strong> Cefaleia na região frontal ou redor dos olhos ao forçar a vista.</li>
+        <li><strong>Necessidade de Maior Iluminação:</strong> Exigência de luz forte para conseguir ler ou focar de perto.</li>
       </ul>
     </section>
 
-    <!-- Seção: Simulador de Visão (Interativo) -->
-    <section class="card" aria-labelledby="simulator-title">
-      <h2 id="simulator-title">🔍 Simulador: Como enxerga quem tem Presbiopia?</h2>
-      <p>Arraste o controle abaixo para simular a perda de foco de perto:</p>
+    <!-- Seção 4: Simulador Visual Interativo -->
+    <section id="simulador" class="card" aria-labelledby="simulator-title">
+      <h2 id="simulator-title">🔍 Simulador Interativo: Como enxerga quem tem Presbiopia?</h2>
+      <p>Use o controle deslizante abaixo para simular a perda de foco de perto vivenciada por quem desenvolve a condição:</p>
       
       <div class="simulator-box">
         <p id="simulated-text" class="blur-level">
-          "A leitura de letras pequenas em livros, bulas e telas torna-se desfocada sem a devida correção óptica."
+          "A leitura de letras pequenas em livros, embalagens de remédios e telas de celulares torna-se turva sem a correção óptica adequada."
         </p>
       </div>
       
       <div class="simulator-controls">
-        <label for="blur-range">Simular nível de nitidez:</label>
-        <input type="range" id="blur-range" min="0" max="8" value="4" aria-label="Ajustar embaçamento do texto">
+        <label for="blur-range">Ajustar intensidade da simulação de visão:</label>
+        <input type="range" id="blur-range" min="0" max="8" value="4" aria-label="Ajustar embaçamento do texto do simulador">
       </div>
     </section>
 
-    <!-- Seção: Mitos e Verdades -->
-    <section class="card" aria-labelledby="myths-title">
-      <h2 id="myths-title">💡 Mitos e Verdades</h2>
-      <p><strong>"Forçar a vista para ler sem óculos piora o grau rapidamente?"</strong><br>
-      <em>Mito.</em> Forçar a visão gera desconforto e dor de cabeça, mas não acelera o avanço natural da presbiopia.</p>
+    <!-- Seção 5: Vídeo Explicativo -->
+    <section id="video" class="card video-section" aria-labelledby="video-title">
+      <h2 id="video-title">🎥 Vídeo Explicativo: Entendendo o Olho Humano</h2>
+      <p>Assista abaixo à animação explicativa sobre a refração ocular e como funciona a visão:</p>
       
-      <p><strong>"Iluminação adequada ajuda a enxergar melhor de perto?"</strong><br>
-      <em>Verdade.</em> Uma boa luz faz a pupila se contrair levemente, aumentando a profundidade de foco e facilitando a leitura.</p>
+      <div class="video-container">
+        <!-- Iframe do YouTube configurado com parâmetros padrão de reprodução -->
+        <iframe 
+          src="https://www.youtube.com/embed/S300qR1w4jU?rel=0" 
+          title="Animação explicativa sobre a anatomia do olho e presbiopia" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-fallback">
+        Não conseguiu assistir ao vídeo acima? 
+        <a href="https://www.youtube.com/watch?S300qR1w4jU" target="_blank" rel="noopener noreferrer">Clique aqui para abrir diretamente no YouTube ↗</a>.
+      </p>
     </section>
 
-    <!-- Seção: Sintomas vs Soluções (Tabela) -->
-    <section class="card" aria-labelledby="table-title">
-      <h2 id="table-title">📊 Sintomas e Formas de Tratamento</h2>
+    <!-- Seção 6: Opções de Tratamento e Correção -->
+    <section id="tratamentos" class="card" aria-labelledby="table-title">
+      <h2 id="table-title">📊 Formas de Correção e Tratamento</h2>
       <div class="table-responsive">
         <table>
           <thead>
             <tr>
-              <th>Sintoma</th>
-              <th>Opção de Correção</th>
-              <th>Indicação Principais</th>
+              <th>Método</th>
+              <th>Como Funciona</th>
+              <th>Indicação Principal</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Dificuldade pontual de leitura</td>
-              <td>Óculos de Leitura (Visão Simples)</td>
-              <td>Para quem só precisa focar de perto.</td>
+              <td><strong>Óculos para Leitura</strong></td>
+              <td>Lentes monofocais ajustadas apenas para a distância de perto.</td>
+              <td>Pessoas que enxergam bem de longe e só precisam de auxílio para leitura.</td>
             </tr>
             <tr>
-              <td>Dificuldade para longe e perto</td>
-              <td>Lentes Multifocais (Progressivas)</td>
-              <td>Para transição suave entre todas as distâncias.</td>
+              <td><strong>Lentes Multifocais (Progressivas)</strong></td>
+              <td>Possuem múltiplos campos de visão (longe, intermediário e perto) sem divisões visíveis.</td>
+              <td>Para quem necessita de correção contínua em diferentes distâncias.</td>
             </tr>
             <tr>
-              <td>Prática de esportes/atividades livres</td>
-              <td>Lentes de Contato Multifocais</td>
-              <td>Para maior liberdade sem óculos armação.</td>
+              <td><strong>Lentes de Contato Multifocais</strong></td>
+              <td>Lentes aplicadas diretamente na córnea com zonas graduadas de foco.</td>
+              <td>Para quem busca praticidade em atividades esportivas e estéticas.</td>
             </tr>
             <tr>
-              <td>Casos selecionados via exame médico</td>
-              <td>Cirurgia Refrativa / Lente Intraocular</td>
-              <td>Correção cirúrgica sob avaliação oftálmica.</td>
+              <td><strong>Cirurgia Refrativa / Lente Intraocular</strong></td>
+              <td>Procedimentos cirúrgicos a laser ou substituição do cristalino por lente artificial.</td>
+              <td>Avaliação médica rigorosa para pacientes selecionados pelo oftalmologista.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Seção: Vídeo Explicativo -->
-    <section class="card video-section" aria-labelledby="video-title">
-      <h2 id="video-title">🎥 Vídeo Informativo</h2>
-      <p>Assista ao vídeo explicativo sobre o funcionamento dos olhos e a presbiopia:</p>
+    <!-- Seção 7: Mitos e Verdades -->
+    <section class="card" aria-labelledby="myths-title">
+      <h2 id="myths-title">💡 Mitos e Verdades sobre a Presbiopia</h2>
       
-      <div class="video-container">
-        <!-- Vídeo atualizado sobre refração visual e presbiopia -->
-        <iframe 
-          src="https://www.youtube.com/embed/S300qR1w4jU" 
-          title="Animação explicativa sobre visão e presbiopia" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+      <div class="qa-block">
+        <p><strong>1. "Usar óculos faz o grau aumentar mais rápido?"</strong></p>
+        <p><em>Mito!</em> Os óculos apenas fornecem a refração que o seu olho não consegue mais fazer sozinho. Não usá-los provoca dores de cabeça e cansaço visual, mas não interfere na velocidade de progressão natural da presbiopia.</p>
+      </div>
+
+      <div class="qa-block">
+        <p><strong>2. "Posso comprar óculos prontos de farmácia ou camelô sem consulta?"</strong></p>
+        <p><em>Mito e Alerta!</em> Óculos genéricos não consideram o astigmatismo, graus diferentes entre os olhos ou a distância nasopupilar individual. O uso incorreto pode causar tonturas, dores de cabeça e desconforto severo.</p>
+      </div>
+
+      <div class="qa-block">
+        <p><strong>3. "A presbiopia afeta todas as pessoas?"</strong></p>
+        <p><em>Verdade!</em> Como é decorrente do envelhecimento natural do corpo humano, cerca de 100% das pessoas desenvolverão algum grau de presbiopia a partir dos 40 a 45 anos.</p>
       </div>
     </section>
 
-    <!-- Seção: Acesso à Saúde Ocular no SUS -->
+    <!-- Seção 8: Atendimento no SUS -->
     <section class="card" aria-labelledby="sus-title">
-      <h2 id="sus-title">🏥 Atendimento pelo Sistema Único de Saúde (SUS)</h2>
+      <h2 id="sus-title">🏥 Atendimento Gratuito no SUS</h2>
       <p>
-        O acompanhamento da saúde dos olhos é um direito. Através da Unidade Básica de Saúde (UBS) do seu município, é possível agendar consultas com médicos oftalmologistas e obter prescrições adequadas gratuitamente.
+        O Sistema Único de Saúde (SUS) oferece consultas oftálmicas gratuitas. Para agendar:
       </p>
+      <ol class="styled-list">
+        <li>Procure a Unidade Básica de Saúde (UBS) mais próxima da sua residência.</li>
+        <li>Solicite um encaminhamento com o clínico geral para a especialidade de Oftalmologia.</li>
+        <li>Realize o exame completo para prescrição correta de lentes.</li>
+      </ol>
     </section>
 
-    <!-- Seção: Perguntas Frequentes (FAQ) -->
-    <section class="card" aria-labelledby="faq-title">
-      <h2 id="faq-title">❓ Perguntas Frequentes</h2>
+    <!-- Seção 9: Perguntas Frequentes (FAQ Accordion) -->
+    <section id="faq" class="card" aria-labelledby="faq-title">
+      <h2 id="faq-title">❓ Perguntas Frequentes (FAQ)</h2>
       
       <details>
-        <summary>A presbiopia acontece com todo mundo?</summary>
-        <p>Sim. Trata-se de uma evolução natural da anatomia ocular que afeta gradualmente 100% das pessoas a partir dos 40-45 anos.</p>
+        <summary>Qual a diferença entre Presbiopia e Hipermetropia?</summary>
+        <p>A hipermetropia é uma alteração no formato do olho (geralmente um olho menor que o normal) presente desde o nascimento ou infância. A presbiopia é o enrijecimento do cristalino devido à idade.</p>
       </details>
 
       <details>
-        <summary>Comprar óculos prontos em farmácias/camelôs é seguro?</summary>
-        <p>Não é o ideal. Lentes genéricas não consideram o astigmatismo, miopia associada ou a distância naso-pupilar individual, o que pode provocar dores de cabeça e fadiga visual.</p>
+        <summary>Exercícios oculares podem curar a presbiopia?</summary>
+        <p>Não existem evidências científicas de que exercícios oculares revertam o enrijecimento do cristalino. Apenas correções ópticas ou cirúrgicas restabelecem o foco.</p>
+      </details>
+
+      <details>
+        <summary>De quanto em quanto tempo devo renovar meus óculos?</summary>
+        <p>Recomenda-se realizar uma consulta oftalmológica anualmente, pois o grau da presbiopia costuma evoluir progressivamente até por volta dos 60 a 65 anos, quando se estabiliza.</p>
       </details>
     </section>
 
-    <!-- Seção: Links Externos -->
-    <section class="card links-section" aria-labelledby="links-title">
+    <!-- Seção 10: Links Externos Confiáveis -->
+    <section id="links" class="card links-section" aria-labelledby="links-title">
       <h2 id="links-title">🔗 Links Externos e Fontes Oficiais</h2>
+      <p>Aprofunde seus conhecimentos através de canais institucionais:</p>
+      
       <ul class="external-links">
         <li>
           <a href="https://www.cbo.com.br" target="_blank" rel="noopener noreferrer">
@@ -172,28 +216,28 @@
         </li>
         <li>
           <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer">
-            Ministério da Saúde - Portal Saúde Ocular ↗
+            Ministério da Saúde - Portal da Saúde Ocular ↗
           </a>
         </li>
         <li>
-          <a href="https://exemplo.com" target="_blank" rel="noopener noreferrer">
-            [Link Externo Adicional do Projeto / Material PDF] ↗
+          <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">
+            Organização Mundial da Saúde (OMS) - Saúde Visão ↗
           </a>
         </li>
       </ul>
     </section>
 
-    <!-- Seção: Contato / Dúvidas -->
+    <!-- Seção 11: Formulário de Contato do Estande -->
     <section class="card" aria-labelledby="contact-title">
-      <h2 id="contact-title">✉️ Envie sua dúvida para nossa equipe</h2>
+      <h2 id="contact-title">✉️ Envie sua pergunta para a Equipe da Feira</h2>
       <form id="contact-form">
         <div class="form-group">
-          <label for="name">Nome:</label>
-          <input type="text" id="name" required placeholder="Seu nome completo">
+          <label for="name">Nome completo:</label>
+          <input type="text" id="name" required placeholder="Digite seu nome">
         </div>
         <div class="form-group">
-          <label for="message">Mensagem ou Pergunta:</label>
-          <textarea id="message" rows="4" required placeholder="Escreva sua pergunta sobre o tema..."></textarea>
+          <label for="message">Sua dúvida ou mensagem:</label>
+          <textarea id="message" rows="4" required placeholder="Escreva sua mensagem sobre o tema da feira..."></textarea>
         </div>
         <button type="submit" class="btn-submit">Enviar Pergunta</button>
       </form>
@@ -201,11 +245,11 @@
 
   </main>
 
-  <!-- Rodapé -->
+  <!-- Rodapé Institucional -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Feira de Saúde - Projeto Presbiopia</p>
-      <p>Hospedado em: <code>site-feira-pesbiopia.vercel.app</code></p>
+      <p>&copy; 2026 Feira de Saúde - Projeto de Conscientização sobre a Presbiopia</p>
+      <p>Endereço de acesso público: <code>https://site-feira-pesbiopia.vercel.app</code></p>
     </div>
   </footer>
 
