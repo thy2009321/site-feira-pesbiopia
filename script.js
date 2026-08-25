@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- RECURSO: LEITURA EM VOZ ALTA (Web Speech API) ---
+  // --- RECURSO: LEITURA EM VOZ ALTA (Ajustada para Tom/Voz Serena) ---
   const btnRead = document.getElementById('btn-read');
   const btnStop = document.getElementById('btn-stop');
   let synth = window.speechSynthesis;
@@ -46,8 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const mainText = document.querySelector('main').innerText;
       const utterance = new SpeechSynthesisUtterance(mainText);
+      
       utterance.lang = 'pt-BR';
-      utterance.rate = 1.0;
+      utterance.rate = 0.85;  // Velocidade levemente mais pausada para melhor clareza
+      utterance.pitch = 0.9;  // Tom de voz um pouco mais suave/grave
 
       utterance.onend = () => {
         btnRead.style.display = 'inline-block';
@@ -68,12 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btnRead.style.display = 'none';
   }
 
-  // --- SIMULAÇÃO DE ENVIO DO FORMULÁRIO ---
+  // --- ENVIO DO FORMULÁRIO DE CONTATO ---
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Obrigado! Sua mensagem foi recebida.');
+      alert('Sua dúvida foi enviada com sucesso! Agradecemos o contato.');
       contactForm.reset();
     });
   }

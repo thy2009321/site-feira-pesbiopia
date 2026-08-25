@@ -1,11 +1,12 @@
+/* Nova Paleta de Cores: Teal / Verde Saúde Visual */
 :root {
-  --bg-color: #f8f9fa;
+  --bg-color: #f4f8f8;
   --card-bg: #ffffff;
-  --text-color: #212529;
-  --primary-color: #0056b3;
-  --primary-hover: #003d80;
-  --accent-color: #e9ecef;
-  --border-color: #dee2e6;
+  --text-color: #1a2e2e;
+  --primary-color: #008080; /* Teal / Verde Médico */
+  --primary-hover: #005959;
+  --accent-color: #e6f2f2;
+  --border-color: #c0dede;
   --font-size-base: 1rem;
 }
 
@@ -14,8 +15,8 @@ body.high-contrast {
   --bg-color: #000000;
   --card-bg: #121212;
   --text-color: #ffffff;
-  --primary-color: #ffff00;
-  --primary-hover: #ffd700;
+  --primary-color: #00ffff;
+  --primary-hover: #80ffff;
   --accent-color: #1f1f1f;
   --border-color: #ffffff;
 }
@@ -39,7 +40,7 @@ body {
 
 /* Barra de Acessibilidade */
 .accessibility-bar {
-  background-color: #1f2d3d;
+  background-color: #0f2b2b;
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -55,7 +56,7 @@ body {
 
 .accessibility-controls button {
   background-color: #ffffff;
-  color: #000000;
+  color: #0f2b2b;
   border: 1px solid #ccc;
   padding: 8px 12px;
   border-radius: 4px;
@@ -66,11 +67,11 @@ body {
 
 .accessibility-controls button:hover,
 .accessibility-controls button:focus {
-  background-color: #e2e6ea;
+  background-color: #d1e8e8;
   outline: 3px solid var(--primary-color);
 }
 
-/* Cabeçalho */
+/* Cabeçalho Principal */
 .main-header {
   background-color: var(--primary-color);
   color: white;
@@ -87,6 +88,12 @@ body.high-contrast .main-header {
   font-size: 2.2rem;
 }
 
+.subtitle {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
 /* Cards de Conteúdo */
 .card {
   background: var(--card-bg);
@@ -94,7 +101,7 @@ body.high-contrast .main-header {
   border-radius: 8px;
   padding: 24px;
   margin: 24px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .card h2 {
