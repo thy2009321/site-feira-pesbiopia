@@ -1,20 +1,19 @@
-/* Paleta de Cores Médica e Acessível */
 :root {
-  --bg-color: #f0f4f8;
+  --bg-color: #f4f7f9;
   --card-bg: #ffffff;
-  --text-main: #1c2833;
-  --text-muted: #4a5568;
-  --primary-blue: #0f4c81;
-  --primary-hover: #0a3357;
-  --accent-cyan: #00a8cc;
-  --border-color: #d9e2ec;
-  --alert-bg: #e1f5fe;
-  --alert-border: #0288d1;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --primary-blue: #0284c7;
+  --primary-dark: #0369a1;
+  --accent-cyan: #38bdf8;
+  --border-color: #e2e8f0;
+  --alert-bg: #e0f2fe;
+  --alert-border: #0284c7;
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  font-size: 100%; /* 16px por padrão */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 100%;
   line-height: 1.7;
   background-color: var(--bg-color);
   color: var(--text-main);
@@ -28,15 +27,15 @@ body {
   padding: 0 20px;
 }
 
-/* Barra de Acessibilidade (Fixa no Topo) */
+/* Barra de Acessibilidade */
 .toolbar-acessibilidade {
-  background-color: #0b1b2b;
+  background-color: #0f172a;
   color: #ffffff;
-  padding: 10px 0;
+  padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
 .toolbar-content {
@@ -45,6 +44,11 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.toolbar-title {
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .toolbar-buttons {
@@ -56,38 +60,45 @@ body {
 .toolbar-buttons button {
   background-color: var(--primary-blue);
   color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: none;
   padding: 8px 14px;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .toolbar-buttons button:hover {
-  background-color: var(--accent-cyan);
-  color: #000;
+  background-color: var(--primary-dark);
 }
 
 .btn-voz {
-  background-color: #2e7d32 !important;
+  background-color: #16a34a !important;
+}
+
+.btn-voz:hover {
+  background-color: #15803d !important;
 }
 
 .btn-parar {
-  background-color: #c62828 !important;
+  background-color: #dc2626 !important;
 }
 
-/* Banner Principal */
+.btn-parar:hover {
+  background-color: #b91c1c !important;
+}
+
+/* Header */
 .banner-principal {
-  background: linear-gradient(135deg, var(--primary-blue), #1a365d);
+  background: linear-gradient(135deg, #0f172a, #0369a1);
   color: #ffffff;
-  padding: 50px 0;
+  padding: 60px 0;
   text-align: center;
 }
 
 .banner-principal h1 {
-  font-size: 2.5rem;
-  margin: 0 0 10px 0;
+  font-size: 2.6rem;
+  margin: 0 0 12px 0;
 }
 
 .banner-principal p {
@@ -96,26 +107,34 @@ body {
   margin: 0;
 }
 
-/* Cards de Conteúdo */
+/* Cards */
 .conteudo-principal {
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 35px;
+  margin-bottom: 50px;
 }
 
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
-  padding: 30px;
+  border-radius: 12px;
+  padding: 32px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .card h2 {
-  color: var(--primary-blue);
+  color: var(--primary-dark);
   border-bottom: 2px solid var(--border-color);
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.card h3 {
+  color: var(--text-main);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .card p, .card li {
@@ -127,26 +146,26 @@ body {
 }
 
 .card li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .alerta-medico {
   background-color: var(--alert-bg);
   border-left: 5px solid var(--alert-border);
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 4px;
-  color: #01579b;
+  padding: 18px;
+  margin-top: 25px;
+  border-radius: 6px;
+  color: #0369a1;
 }
 
 /* Vídeo Responsivo */
 .video-responsive {
   position: relative;
-  padding-bottom: 56.25%; /* Proporção 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .video-responsive iframe {
@@ -159,9 +178,9 @@ body {
 
 /* Rodapé */
 footer {
-  background-color: #0b1b2b;
-  color: #a0aec0;
+  background-color: #0f172a;
+  color: #94a3b8;
   text-align: center;
-  padding: 25px 0;
-  margin-top: 40px;
+  padding: 30px 0;
+  margin-top: 50px;
 }

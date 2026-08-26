@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnReset = document.getElementById('btn-reset');
 
   btnAumentar.addEventListener('click', () => {
-    if (tamanhoFonte < 170) { // Limite de 170%
+    if (tamanhoFonte < 170) {
       tamanhoFonte += 10;
       document.body.style.fontSize = `${tamanhoFonte}%`;
     }
   });
 
   btnDiminuir.addEventListener('click', () => {
-    if (tamanhoFonte > 80) { // Limite mínimo de 80%
+    if (tamanhoFonte > 80) {
       tamanhoFonte -= 10;
       document.body.style.fontSize = `${tamanhoFonte}%`;
     }
@@ -34,19 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const synth = window.speechSynthesis;
 
     btnLer.addEventListener('click', () => {
-      // Interrompe leituras anteriores antes de iniciar
       synth.cancel();
 
-      // Pega todo o texto informativo do site
       const textoParaLer = document.querySelector('main').innerText;
       const utterance = new SpeechSynthesisUtterance(textoParaLer);
 
-      // Configuração para Português de forma natural e clara
       utterance.lang = 'pt-BR';
-      utterance.rate = 1.0;  // Velocidade normal de conversa
-      utterance.pitch = 1.0; // Tom de voz natural
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
 
-      // Eventos de início e fim da leitura
       utterance.onstart = () => {
         btnLer.style.display = 'none';
         btnParar.style.display = 'inline-block';
