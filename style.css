@@ -1,195 +1,96 @@
-/* Paleta de Cores Teal Verde Saúde */
 :root {
-  --bg-color: #f2f7f7;
-  --card-bg: #ffffff;
-  --text-color: #1c2d2d;
-  --primary-color: #008080;
-  --primary-hover: #005959;
-  --accent-color: #e2f0f0;
-  --border-color: #bce0e0;
-  --font-size-base: 1rem;
-}
-
-/* Modo Alto Contraste */
-body.high-contrast {
-  --bg-color: #000000;
-  --card-bg: #121212;
-  --text-color: #ffffff;
-  --primary-color: #00ffff;
-  --primary-hover: #80ffff;
-  --accent-color: #1f1f1f;
-  --border-color: #ffffff;
+  --cor-fundo: #f4f7f6;
+  --cor-card: #ffffff;
+  --cor-texto: #2c3e50;
+  --cor-principal: #00796b;
+  --cor-destaque: #004d40;
 }
 
 body {
   font-family: Arial, sans-serif;
-  font-size: var(--font-size-base);
+  font-size: 100%; /* Tamanho inicial (16px) */
   line-height: 1.6;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Barra de Acessibilidade Fixa */
-.accessibility-bar {
-  background-color: #0d2626;
+/* Barra do Botão de Letras */
+.bar-acessibilidade {
+  background-color: #1a252f;
+  color: #ffffff;
   padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
-.accessibility-controls {
+.container-barra {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
+  align-items: center;
   gap: 10px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
 }
 
-.accessibility-controls button {
-  background-color: #ffffff;
-  color: #0d2626;
-  border: 1px solid #ccc;
-  padding: 8px 12px;
+.container-barra button {
+  background-color: var(--cor-principal);
+  color: white;
+  border: none;
+  padding: 6px 12px;
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 0.9rem;
 }
 
-.accessibility-controls button:hover,
-.accessibility-controls button:focus {
-  background-color: #d1e8e8;
-  outline: 3px solid var(--primary-color);
+.container-barra button:hover {
+  background-color: var(--cor-destaque);
 }
 
 /* Header */
-.main-header {
-  background-color: var(--primary-color);
+.banner {
+  background-color: var(--cor-principal);
   color: white;
-  padding: 40px 0;
   text-align: center;
+  padding: 30px 0;
 }
 
-body.high-contrast .main-header {
-  color: #000000;
+/* Cards de Conteúdo */
+.conteudo {
+  margin-top: 20px;
 }
 
-.main-header h1 {
-  margin: 10px 0;
-  font-size: 2.3rem;
-}
-
-.badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  margin-top: 8px;
-  opacity: 0.95;
-}
-
-/* Navegação Menu Âncoras */
-.nav-menu {
-  background: var(--accent-color);
-  border-bottom: 1px solid var(--border-color);
-  padding: 10px 0;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.nav-links a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  text-decoration: underline;
-}
-
-/* Cards */
 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
+  background-color: var(--cor-card);
   border-radius: 8px;
-  padding: 24px;
-  margin: 24px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .card h2 {
-  color: var(--primary-color);
+  color: var(--cor-principal);
   margin-top: 0;
 }
 
-/* Listas Estilizadas */
-.styled-list {
-  padding-left: 20px;
-}
-
-.styled-list li {
-  margin-bottom: 10px;
-}
-
-/* Simulador */
-.simulator-box {
-  background: var(--accent-color);
-  padding: 20px;
-  border-radius: 6px;
-  text-align: center;
-  margin: 15px 0;
-}
-
-#simulated-text {
-  font-size: 1.2rem;
-  transition: filter 0.2s ease;
-}
-
-.simulator-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.simulator-controls input[type="range"] {
-  width: 100%;
-  max-width: 350px;
-}
-
 /* Vídeo Responsivo */
-.video-container {
+.container-video {
   position: relative;
   padding-bottom: 56.25%; /* Proporção 16:9 */
   height: 0;
   overflow: hidden;
-  border-radius: 8px;
-  background-color: #000;
+  border-radius: 6px;
 }
 
-.video-container iframe {
+.container-video iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -197,117 +98,8 @@ body.high-contrast .main-header {
   height: 100%;
 }
 
-.video-fallback {
-  font-size: 0.9rem;
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* Tabela */
-.table-responsive {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid var(--border-color);
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-}
-
-/* Q&A / Mitos */
-.qa-block {
-  background-color: var(--accent-color);
-  padding: 12px 16px;
-  border-left: 4px solid var(--primary-color);
-  margin-bottom: 12px;
-  border-radius: 4px;
-}
-
-/* FAQ Details Accordion */
-details {
-  border: 1px solid var(--border-color);
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  background-color: var(--accent-color);
-}
-
-summary {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Formulário */
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  box-sizing: border-box;
-}
-
-.btn-submit {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-body.high-contrast .btn-submit {
-  color: #000000;
-}
-
-.btn-submit:hover {
-  background-color: var(--primary-hover);
-}
-
-/* Links */
-.external-links {
-  list-style: none;
-  padding: 0;
-}
-
-.external-links li {
-  margin-bottom: 12px;
-}
-
-.external-links a {
-  color: var(--primary-color);
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Rodapé */
 footer {
   text-align: center;
-  padding: 20px 0;
-  background-color: var(--accent-color);
-  margin-top: 40px;
+  padding: 20px;
+  color: #777;
 }
