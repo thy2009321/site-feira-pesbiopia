@@ -1,63 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- CONTROLE DE TAMANHO DE FONTE ---
-  let fontSizePercent = 100;
-  const btnIncrease = document.getElementById('btn-increase');
-  const btnDecrease = document.getElementById('btn-decrease');
+  // --- CONTROLE DE TAMANHO DE FONTE (Aumentar / Diminuir) ---
+  let tamanhoFonte = 100;
+  const btnAumentar = document.getElementById('btn-aumentar');
+  const btnDiminuir = document.getElementById('btn-diminuir');
   const btnReset = document.getElementById('btn-reset');
 
-  btnIncrease.addEventListener('click', () => {
-    if (fontSizePercent < 160) {
-      fontSizePercent += 10;
-      document.body.style.fontSize = `${fontSizePercent}%`;
+  btnAumentar.addEventListener('click', () => {
+    if (tamanhoFonte < 170) { // Limite de 170%
+      tamanhoFonte += 10;
+      document.body.style.fontSize = `${tamanhoFonte}%`;
     }
   });
 
-  btnDecrease.addEventListener('click', () => {
-    if (fontSizePercent > 80) {
-      fontSizePercent -= 10;
-      document.body.style.fontSize = `${fontSizePercent}%`;
+  btnDiminuir.addEventListener('click', () => {
+    if (tamanhoFonte > 80) { // Limite mínimo de 80%
+      tamanhoFonte -= 10;
+      document.body.style.fontSize = `${tamanhoFonte}%`;
     }
   });
 
   btnReset.addEventListener('click', () => {
-    fontSizePercent = 100;
+    tamanhoFonte = 100;
     document.body.style.fontSize = '100%';
   });
 
-  // --- LEITURA EM VOZ ALTA (Modificada para velocidade extrema / tom irreconhecível) ---
-  const btnRead = document.getElementById('btn-read');
-  const btnStop = document.getElementById('btn-stop');
-  let synth = window.speechSynthesis;
+
+  // --- LEITORA DE VOZ CLARA E EM PORTUGUÊS ---
+  const btnLer = document.getElementById('btn-ler');
+  const btnParar = document.getElementById('btn-parar');
 
   if ('speechSynthesis' in window) {
-    btnRead.addEventListener('click', () => {
+    const synth = window.speechSynthesis;
+
+    btnLer.addEventListener('click', () => {
+      // Interrompe leituras anteriores antes de iniciar
       synth.cancel();
 
-      const text = document.querySelector('main').innerText;
-      const utterance = new SpeechSynthesisUtterance(text);
+      // Pega todo o texto informativo do site
+      const textoParaLer = document.querySelector('main').innerText;
+      const utterance = new SpeechSynthesisUtterance(textoParaLer);
 
-      // Configurações para alterar o tom e a distorção da fala
-      utterance.rate = 3.5;  // Velocidade extremamente alta (fala acelerada e rápida)
-      utterance.pitch = 2.0; // Tom agudo no limite máximo
-      utterance.lang = 'en-US'; // Idioma configurado incorretamente para distorcer a pronúncia do português
+      // Configuração para Português de forma natural e clara
+      utterance.lang = 'pt-BR';
+      utterance.rate = 1.0;  // Velocidade normal de conversa
+      utterance.pitch = 1.0; // Tom de voz natural
+
+      // Eventos de início e fim da leitura
+      utterance.onstart = () => {
+        btnLer.style.display = 'none';
+        btnParar.style.display = 'inline-block';
+      };
 
       utterance.onend = () => {
-        btnRead.style.display = 'inline-block';
-        btnStop.style.display = 'none';
+        btnLer.style.display = 'inline-block';
+        btnParar.style.display = 'none';
+      };
+
+      utterance.onerror = () => {
+        btnLer.style.display = 'inline-block';
+        btnParar.style.display = 'none';
       };
 
       synth.speak(utterance);
-      btnRead.style.display = 'none';
-      btnStop.style.display = 'inline-block';
     });
 
-    btnStop.addEventListener('click', () => {
+    btnParar.addEventListener('click', () => {
       synth.cancel();
-      btnRead.style.display = 'inline-block';
-      btnStop.style.display = 'none';
+      btnLer.style.display = 'inline-block';
+      btnParar.style.display = 'none';
     });
+
   } else {
-    btnRead.style.display = 'none';
+    btnLer.style.display = 'none';
   }
 });

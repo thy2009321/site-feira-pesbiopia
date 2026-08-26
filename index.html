@@ -3,65 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presbiopia - Guia de Saúde</title>
+  <title>Presbiopia: Guia Completo da Vista Cansada</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Barra de Acessibilidade -->
-  <header class="accessibility-bar">
-    <div class="container accessibility-controls">
-      <button id="btn-increase">A+</button>
-      <button id="btn-decrease">A-</button>
-      <button id="btn-reset">A (Normal)</button>
-      <button id="btn-read">🔊 Ler em Voz Alta</button>
-      <button id="btn-stop" style="display: none;">⏹ Parar</button>
+  <!-- Barra Acessível de Ferramentas -->
+  <header class="toolbar-acessibilidade">
+    <div class="container toolbar-content">
+      <span class="toolbar-title">Acessibilidade:</span>
+      <div class="toolbar-buttons">
+        <button id="btn-aumentar" title="Aumentar Fonte">A+</button>
+        <button id="btn-diminuir" title="Diminuir Fonte">A-</button>
+        <button id="btn-reset" title="Tamanho Normal">A Normal</button>
+        <button id="btn-ler" class="btn-voz">🔊 Ouvir Texto</button>
+        <button id="btn-parar" class="btn-voz btn-parar" style="display: none;">⏹ Parar Leitura</button>
+      </div>
     </div>
   </header>
 
-  <!-- Cabeçalho Principal -->
-  <header class="main-header">
+  <!-- Banner Principal -->
+  <header class="banner-principal">
     <div class="container">
-      <h1>Presbiopia e Saúde Ocular</h1>
-      <p>Entendendo a "vista cansada" de forma simples</p>
+      <h1>Entendendo a Presbiopia</h1>
+      <p>O guia completo sobre causas, sintomas, mecanismos biológicos e tratamentos da "vista cansada".</p>
     </div>
   </header>
 
-  <main class="container">
+  <!-- Conteúdo Principal Completo -->
+  <main class="container conteudo-principal">
 
-    <section class="card">
+    <!-- O que é -->
+    <article class="card">
       <h2>O que é Presbiopia?</h2>
-      <p>A presbiopia é uma alteração natural da visão relacionada ao envelhecimento do olho. Com o tempo, o cristalino perde a elasticidade, dificultando o foco rápido em objetos e textos que estão próximos.</p>
-    </section>
+      <p>A <strong>presbiopia</strong>, popularmente conhecida como <strong>"vista cansada"</strong>, é um erro refrativo natural que afeta a capacidade do olho humano de focar objetos ou textos próximos. Não é considerada uma doença, mas sim um processo biológico natural do envelhecimento do sistema ocular.</p>
+      <p>Geralmente, ela começa a se manifestar entre os <strong>40 e 45 anos</strong> de idade e tende a progredir gradualmente até estabilizar por volta dos 60 a 65 anos.</p>
+    </article>
 
-    <section class="card">
-      <h2>Sintomas Mais Comuns</h2>
+    <!-- Como acontece -->
+    <article class="card">
+      <h2>Como Acontece dentro do Olho? (Anatomia)</h2>
+      <p>Para entender a presbiopia, é preciso compreender o funcionamento do <strong>cristalino</strong>, uma lente transparente localizada logo atrás da íris:</p>
       <ul>
-        <li>Necessidade de afastar livros ou o celular para conseguir ler.</li>
-        <li>Dificuldade de focar letras pequenas.</li>
-        <li>Fadiga ocular e sensação de peso nos olhos.</li>
-        <li>Dores de cabeça após leitura ou trabalhos manuais.</li>
+        <li><strong>Visão na Juventude:</strong> Quando você é jovem, o cristalino é extremamente flexível e maleável. Pequenos músculos ao redor do olho (chamados <em>músculos ciliares</em>) contraem-se e alteram a curvatura do cristalino em milissegundos para focar de perto. Esse processo chama-se <strong>acomodação visual</strong>.</li>
+        <li><strong>Com o Passar dos Anos:</strong> Conforme envelhecemos, as proteínas que compõem o cristalino se enrijecem. Além disso, os músculos ciliares perdem parte da sua eficiência.</li>
+        <li><strong>O Resultado:</strong> O cristalino perde a capacidade de mudar de forma e "esticar". Com isso, a luz vinda de objetos próximos não é focada corretamente na retina, gerando uma imagem desfocada e borrada.</li>
       </ul>
-    </section>
+    </article>
 
-    <!-- Seção de Vídeo -->
-    <section class="card">
-      <h2>Vídeo Explicativo</h2>
-      <div class="video-container">
+    <!-- Sintomas -->
+    <article class="card">
+      <h2>Sintomas Mais Comuns</h2>
+      <p>Se você tem mais de 40 anos e apresenta algum dos sinais abaixo, é provável que esteja desenvolvendo presbiopia:</p>
+      <ul class="lista-sintomas">
+        <li><strong>Síndrome do "braço curto":</strong> Necessidade constante de afastar livros, jornais ou o celular para conseguir ler.</li>
+        <li><strong>Visão embaçada:</strong> Dificuldade para enxergar detalhes finos em leituras ou trabalhos manuais (como costurar ou escrever).</li>
+        <li><strong>Cansaço visual (Fadiga ocular):</strong> Sensação de peso, ardência ou dor nos olhos após longos períodos de leitura.</li>
+        <li><strong>Dores de cabeça (Cefaleia):</strong> Provocadas pelo esforço excessivo que o olho faz ao tentar focar.</li>
+        <li><strong>Necessidade de luz forte:</strong> Exigência de iluminação muito mais intensa para conseguir ler com nitidez.</li>
+      </ul>
+    </article>
+
+    <!-- Vídeo Explicativo -->
+    <article class="card">
+      <h2>Vídeo Explicativo: Como Funciona a Presbiopia</h2>
+      <p>Assista à animação explicativa abaixo para visualizar como o cristalino do olho humano se comporta com o passar dos anos:</p>
+      
+      <div class="video-responsive">
         <iframe 
           src="https://www.youtube.com/embed/S300qR1w4jU" 
-          title="Vídeo sobre visão e presbiopia" 
+          title="Vídeo Explicativo sobre Presbiopia e Visão" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
       </div>
-    </section>
+    </article>
+
+    <!-- Tratamentos -->
+    <article class="card">
+      <h2>Opções de Tratamento e Correção</h2>
+      <p>A presbiopia não tem cura definitiva por ser um processo natural do corpo, mas existem métodos eficazes para restaurar o conforto visual:</p>
+      <ol>
+        <li><strong>Óculos de Leitura:</strong> Opção simples usada apenas no momento em que for realizar tarefas de perto.</li>
+        <li><strong>Lentes Multifocais (Progressivas):</strong> Óculos que permitem enxergar de longe, a meia distância e de perto na mesma lente, sem necessidade de tirar e colocar o óculos.</li>
+        <li><strong>Lentes de Contato:</strong> Existem opções multifocais ou a técnica de <em>monovisão</em> (onde um olho é corrigido para longe e o outro para perto).</li>
+        <li><strong>Cirurgia Refrativa ou Implante de Lente:</strong> Procedimentos cirúrgicos realizados por oftalmologistas para substituir o cristalino rígido por uma lente intraocular artificial.</li>
+      </ol>
+      <div class="alerta-medico">
+        <strong>Importante:</strong> Consulte sempre um médico <strong>Oftalmologista</strong> para realizar exames de refração e receber a receita adequada para o seu caso.
+      </div>
+    </article>
 
   </main>
 
   <footer>
-    <p>Site Informativo - Saúde Visual</p>
+    <div class="container">
+      <p>Portal Informativo sobre Saúde Ocular - Conteúdo Educacional</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
